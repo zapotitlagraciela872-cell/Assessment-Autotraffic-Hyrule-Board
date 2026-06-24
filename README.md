@@ -1,75 +1,97 @@
-# React + TypeScript + Vite
+# Assessment Autotraffic - Hyrule Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Evaluación técnica Full Stack desarrollada para Autotraffic.
 
-Currently, two official plugins are available:
+## Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Frontend
+- React
+- TypeScript
+- Vite
+- Axios
+- CSS
 
-## React Compiler
+### Backend
+- Node.js
+- Express
+- TypeScript
+- SQLite
+- bcryptjs
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funcionalidades
 
-## Expanding the ESLint configuration
+- Registro de usuarios
+- Inicio de sesión
+- Crear tareas
+- Consultar tareas
+- Editar tareas
+- Eliminar tareas
+- Marcar tareas como completadas o pendientes
+- Buscar tareas
+- Filtrar tareas por estado
+- Tareas asociadas por usuario
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Formato de una tarea
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```json
+{
+  "id": 1,
+  "title": "Título de la tarea",
+  "description": "Descripción opcional",
+  "completed": false,
+  "created_at": "2026-06-24",
+  "updated_at": "2026-06-24"
+}
+Instrucciones para ejecutar el proyecto
+Backend
+cd backend
+npm install
+npm run dev
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+El backend se ejecuta en:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+http://localhost:3000
+Frontend
+cd frontend
+npm install
+npm run dev
 
-```
+El frontend se ejecuta en:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+http://localhost:5173
+Endpoints principales
+POST /auth/register
+POST /auth/login
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+GET /tasks?userId=1
+POST /tasks
+PUT /tasks/:id
+DELETE /tasks/:id?userId=1
+Credenciales de prueba
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Usuario: graciela
+Contraseña: admin123
 
-```
+Usuario: demo
+Contraseña: demo123
+
+Enlaces
+
+Repositorio público:
+
+https://github.com/zapotitlagraciela872-cell/Assessment-Autotraffic-Hyrule-Board
+
+Backend configurado en Render:
+
+https://assessment-autotraffic-hyrule-board.onrender.com
+Nota sobre despliegue
+
+El proyecto funciona correctamente en entorno local. El backend fue configurado en Render; durante el despliegue se presentó un conflicto con dependencias nativas de SQLite/better-sqlite3 en ambiente Linux.
+
+Explicación breve del sistema
+
+El sistema permite que un usuario se registre e inicie sesión. Después de autenticarse, puede administrar sus tareas personales: crear, consultar, editar, eliminar y marcar tareas como completadas o pendientes.
+
+El frontend fue desarrollado con React, TypeScript y Vite. La comunicación con el backend se realiza mediante Axios.
+
+El backend fue desarrollado con Node.js, Express y TypeScript. La información se almacena en SQLite. Las contraseñas se protegen utilizando bcryptjs y cada tarea se relaciona con un usuario mediante user_id.
