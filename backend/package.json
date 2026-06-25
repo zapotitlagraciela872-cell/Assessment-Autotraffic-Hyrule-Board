@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "dev": "ts-node-dev src/app.ts",
-  "build": "tsc",
-  "start": "node dist/app.js",
-  "postinstall": "npm rebuild better-sqlite3"
-},
+    "dev": "ts-node-dev src/app.ts",
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "postinstall": "npm rebuild better-sqlite3"
+  },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^26.0.0",
@@ -17,6 +18,7 @@
     "typescript": "^6.0.3"
   },
   "dependencies": {
+    "better-sqlite3": "^12.11.1",
     "sqlite3": "^6.0.1"
   }
 }
