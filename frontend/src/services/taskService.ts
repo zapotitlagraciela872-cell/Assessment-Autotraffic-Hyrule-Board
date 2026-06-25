@@ -1,7 +1,9 @@
 import axios from "axios"
 
-const TASKS_API = "http://localhost:3000/tasks"
-const AUTH_API = "http://localhost:3000/auth"
+const API_URL = import.meta.env.VITE_API_URL
+
+const TASKS_API = `${API_URL}/tasks`
+const AUTH_API = `${API_URL}/auth`
 
 type TaskData = {
   title?: string
