@@ -100,16 +100,14 @@ Contraseña: demo123
 
 ## Enlaces
 
-Repositorio público:
+Frontend:
+https://assessment-autotraffic-hyrule-board.vercel.app
 
-```text
-https://github.com/zapotitlagraciela872-cell/Assessment-Autotraffic-Hyrule-Board
-```
-
-Backend configurado en Render:
-
-```text
+Backend:
 https://assessment-autotraffic-hyrule-board.onrender.com
+
+Repositorio:
+https://github.com/zapotitlagraciela872-cell/Assessment-Autotraffic-Hyrule-Board
 ```
 
 ## Nota sobre despliegue
